@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">VinylsAppG21</string>
+    <string name="app_name"><b>Vinilos App</b></string>
+    <string name="body_landing">Ingresar Como</string>
+    <string name="visitor"><b>VISITANTE</b></string>
+    <string name="collector"><b>COLECCIONISTA</b></string>
+    <string name="button_iniciar"><b>Iniciar</b></string>
 </resources>
