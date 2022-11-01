@@ -11,25 +11,21 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
-import com.example.android.vinylsappg21.databinding.ActivityAlbums2Binding
+import com.example.android.vinylsappg21.databinding.ActivityAlbumsBinding
 
 class AlbumsActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityAlbums2Binding
+    private lateinit var binding: ActivityAlbumsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityAlbums2Binding.inflate(layoutInflater)
+        binding = ActivityAlbumsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.appBarAlbums2.toolbar)
+        setSupportActionBar(binding.appBarAlbums.toolbar)
 
-        binding.appBarAlbums2.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_albums2)
