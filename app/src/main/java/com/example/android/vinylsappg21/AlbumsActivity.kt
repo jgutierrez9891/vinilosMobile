@@ -33,7 +33,7 @@ class AlbumsActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+                R.id.nav_albums_menu, R.id.nav_artists_menu, R.id.nav_collectors_menu
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
