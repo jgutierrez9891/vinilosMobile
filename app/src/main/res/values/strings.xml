@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">VinylsAppG21</string>
+    <string name="body_landing">Ingresar Como</string>
+    <string name="visitor"><b>VISITANTE</b></string>
+    <string name="collector"><b>COLECCIONISTA</b></string>
+    <string name="button_iniciar"><b>Iniciar</b></string>
     <string name="title_activity_albums">Álbums</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
