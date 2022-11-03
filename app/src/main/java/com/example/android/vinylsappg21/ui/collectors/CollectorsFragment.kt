@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.android.vinylsappg21.databinding.FragmentCollectorsBinding
+import com.example.android.vinylsappg21.viewmodels.CollectorViewModel
 
 class CollectorsFragment : Fragment() {
 
@@ -23,7 +24,7 @@ class CollectorsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val collectorsViewModel =
-            ViewModelProvider(this).get(CollectorsViewModel::class.java)
+            ViewModelProvider(this).get(CollectorViewModel::class.java)
 
         _binding = FragmentCollectorsBinding.inflate(inflater, container, false)
         val root: View = binding.root

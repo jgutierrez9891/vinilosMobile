@@ -32,7 +32,7 @@ class AlbumsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val albumsViewModel =
-            ViewModelProvider(this).get(AlbumsViewModeld::class.java)
+            ViewModelProvider(this).get(AlbumViewModel::class.java)
 
         _binding = FragmentAlbumsBinding.inflate(inflater, container, false)
         val root: View = binding.root

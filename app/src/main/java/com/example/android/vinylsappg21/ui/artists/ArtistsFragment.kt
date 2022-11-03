@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.android.vinylsappg21.databinding.FragmentArtistsBinding
+import com.example.android.vinylsappg21.viewmodels.ArtistViewModel
 
 class ArtistsFragment : Fragment() {
 
@@ -23,7 +24,7 @@ class ArtistsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val artistsViewModel =
-            ViewModelProvider(this).get(ArtistsViewModel::class.java)
+            ViewModelProvider(this).get(ArtistViewModel::class.java)
 
         _binding = FragmentArtistsBinding.inflate(inflater, container, false)
         val root: View = binding.root
