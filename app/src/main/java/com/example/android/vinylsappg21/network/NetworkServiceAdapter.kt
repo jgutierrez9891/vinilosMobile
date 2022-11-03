@@ -11,10 +11,12 @@ import com.android.volley.toolbox.Volley
 import com.example.android.vinylsappg21.models.Album
 import org.json.JSONArray
 import org.json.JSONObject
+import java.util.*
+import kotlin.Comparator
 
 class NetworkServiceAdapter constructor(context: Context) {
     companion object{
-        const val BASE_URL= "https://back-vinyls-populated.herokuapp.com/"
+        const val BASE_URL= "http://vinyls-back.herokuapp.com/"
         var instance: NetworkServiceAdapter? = null
         fun getInstance(context: Context) =
             instance ?: synchronized(this) {
@@ -36,6 +38,7 @@ class NetworkServiceAdapter constructor(context: Context) {
                     val item = resp.getJSONObject(i)
                     list.add(i, Album(albumId = item.getInt("id"),name = item.getString("name"), cover = item.getString("cover"), recordLabel = item.getString("recordLabel"), releaseDate = item.getString("releaseDate"), genre = item.getString("genre"), description = item.getString("description")))
                 }
+                list.sortBy{it.name?.toString()}
                 onComplete(list)
             },
             Response.ErrorListener {
