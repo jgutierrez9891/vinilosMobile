@@ -4,10 +4,12 @@ import android.app.Application
 import androidx.lifecycle.*
 import com.example.android.vinylsappg21.network.NetworkServiceAdapter
 import com.example.android.vinylsappg21.models.Album
+import com.example.android.vinylsappg21.repositories.AlbumsRepository
 
 class AlbumViewModel(application: Application) :  AndroidViewModel(application) {
 
     private val _albums = MutableLiveData<List<Album>>()
+    private val albumsRepository = AlbumsRepository(application)
 
     val albums: LiveData<List<Album>>
         get() = _albums
@@ -27,10 +29,11 @@ class AlbumViewModel(application: Application) :  AndroidViewModel(application) 
     }
 
     private fun refreshDataFromNetwork() {
-        NetworkServiceAdapter.getInstance(getApplication()).getAlbums({
+        albumsRepository.refreshData({
             _albums.postValue(it)
             _eventNetworkError.value = false
             _isNetworkErrorShown.value = false
+
         },{
             _eventNetworkError.value = true
         })
