@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -11,6 +12,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.android.vinylsappg21.GlobalStuff
+import com.example.android.vinylsappg21.R
 import com.example.android.vinylsappg21.databinding.FragmentAlbumsBinding
 import com.example.android.vinylsappg21.models.Album
 import com.example.android.vinylsappg21.ui.adapters.AlbumsAdapter
@@ -39,6 +42,14 @@ class AlbumsFragment : Fragment() {
         val root: View = binding.root
         val view = binding.root
         viewModelAdapter = AlbumsAdapter()
+
+        val button: Button = view.findViewById(R.id.fetch_button)
+
+        if(GlobalStuff.userType == 0) {
+            button.setVisibility(View.GONE);
+        } else {
+            button.setVisibility(View.VISIBLE);
+        }
         return view
     }
 
