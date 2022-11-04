@@ -7,6 +7,12 @@ plugins {
 android {
     namespace 'com.example.android.vinylsappg21'
     compileSdk 32
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+        animationsDisabled = true
+    }
 
     defaultConfig {
         applicationId "com.example.android.vinylsappg21"
@@ -58,4 +64,5 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    debugImplementation 'androidx.fragment:fragment-testing:' + rootProject.androidxFragmentVersion
 }
