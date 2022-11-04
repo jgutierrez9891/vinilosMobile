@@ -67,11 +67,13 @@
                 <TableRow android:gravity="center">
 
                     <ImageView
+                        android:id="@+id/visitor1"
                         android:layout_width="211dp"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_visitantes" />
 
                     <ImageView
+                        android:id="@+id/collector1"
                         android:layout_width="177dp"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_coleccionistas" />
@@ -80,7 +82,7 @@
                 <TableRow android:gravity="center">
 
                     <TextView
-                        android:id="@+id/visitor"
+                        android:id="@+id/visitor2"
                         android:layout_width="170dp"
                         android:layout_height="match_parent"
                         android:gravity="center"
@@ -89,7 +91,7 @@
                         android:textSize="15dp" />
 
                     <TextView
-                        android:id="@+id/colector"
+                        android:id="@+id/collector2"
                         android:layout_width="170dp"
                         android:layout_height="match_parent"
                         android:gravity="center"
@@ -101,21 +103,7 @@
             </TableLayout>
 
         </TableRow>
-        <TableRow
-            android:gravity="center">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="53dp"
-                android:src="@drawable/white_space" />
-        </TableRow>
-        <TableRow android:gravity="center">
-
-            <Button
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:text="@string/button_iniciar" />
-        </TableRow>
     </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
