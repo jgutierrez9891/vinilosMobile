@@ -75,4 +75,12 @@ class ArtistsTest {
             .perform(RecyclerViewActions.scrollToPosition<ArtistsAdapter.ArtistViewHolder>(1))
     }
 
+    @Test
+    fun checkTextSectionArtistTest(){
+        onView(withId(R.id.visitor1)).perform(click())
+        onView(ViewMatchers.withContentDescription(R.string.navigation_drawer_open)).perform(click())
+        onView(withId(R.id.nav_artists_menu)).perform(click())
+        onView(withId(R.id.artists_fragment_desc)).check(matches(withText("Encuentra tus artistas preferidos")))
+    }
+
 }
