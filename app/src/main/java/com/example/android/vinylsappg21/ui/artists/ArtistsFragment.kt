@@ -39,13 +39,7 @@ class ArtistsFragment : Fragment() {
         val view = binding.root
         viewModelAdapter = ArtistsAdapter()
 
-        // val button: Button = view.findViewById(R.id.fetch_button)
-
-        val textView: TextView = binding.artistsFragmentDesc
-//        artistsViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
-        return root
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
