@@ -40,12 +40,4 @@ class HomePageTest {
         onView(withId(R.id.text_title)).check((matches(withText("Vinilos App"))))
     }
 
-    @Test
-    fun accessArtistFromMenuTest(){
-        onView(withId(R.id.visitor1)).perform(click())
-        onView(withContentDescription(R.string.navigation_drawer_open)).perform(click())
-        onView(withId(R.id.nav_artists_menu)).perform(click())
-        onView(withId(R.id.text_gallery)).check(matches(withText("This is artists Fragment")))
-    }
-
 }

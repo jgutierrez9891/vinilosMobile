@@ -26,7 +26,7 @@ class AlbumsTest {
     private val titleAlbum2 = "A Night at the Opera"
     private val titleAlbum3 = "Buscando América"
 
-    //@Test
+    @Test
     fun accessAlbumFromMenuTest(){
         onView(withId(R.id.visitor1)).perform(click())
         onView(withContentDescription(R.string.navigation_drawer_open)).perform(click())
@@ -34,19 +34,19 @@ class AlbumsTest {
         onView(withId(R.id.albums_fragment_title)).check(matches(withText("Álbums")))
     }
 
-    //@Test
+    @Test
     fun newAlbumButtonNotDisplayedTest(){
         onView(withId(R.id.visitor1)).perform(click())
         onView(withId(R.id.fetch_button)).check(matches(Matchers.not(isDisplayed())))
     }
 
-    //@Test
+    @Test
     fun albumsListIsDisplayedTest(){
         onView(withId(R.id.visitor1)).perform(click())
         onView(withId(R.id.albumsRv)).check(matches(isDisplayed()))
     }
 
-    //@Test
+    @Test
     fun checkAlbumNameDisplayedTest(){
         onView(withId(R.id.visitor1)).perform(click())
         onView(withId(R.id.albumsRv))
@@ -62,7 +62,7 @@ class AlbumsTest {
         assertDisplayedAtPosition(R.id.albumsRv, 2, R.id.textView6, titleAlbum3)
     }
 
-    //@Test
+    @Test
     fun scrollToAlbumListTest(){
         onView(withId(R.id.visitor1)).perform(click())
         onView(withId(R.id.albumsRv))
@@ -71,6 +71,12 @@ class AlbumsTest {
             .perform(scrollToPosition<AlbumsAdapter.AlbumViewHolder>(1))
     }
 
+    @Test
+    fun checkTextNewAlbumButtonTest(){
+        onView(withId(R.id.collector1)).perform(click())
+        onView(withId(R.id.fetch_button)).check(matches(isDisplayed()))
+        onView(withId(R.id.fetch_button)).check(matches(withText("NUEVO ÁLBUM")))
+    }
 
 
 }
