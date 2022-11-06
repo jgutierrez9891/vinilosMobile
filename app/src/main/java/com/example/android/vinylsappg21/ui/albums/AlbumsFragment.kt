@@ -1,6 +1,8 @@
 package com.example.android.vinylsappg21.ui.albums
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,6 +26,7 @@ class AlbumsFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewModel: AlbumViewModel
     private var viewModelAdapter: AlbumsAdapter? = null
+    private lateinit var albumsList: List<Album>
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -56,6 +59,22 @@ class AlbumsFragment : Fragment() {
         recyclerView = binding.albumsRv
         recyclerView.layoutManager = GridLayoutManager(context,2)
         recyclerView.adapter = viewModelAdapter
+        binding.searchTextAlbums.addTextChangedListener(object : TextWatcher {
+
+            override fun afterTextChanged(s: Editable) {}
+
+            override fun beforeTextChanged(s: CharSequence, start: Int,
+                                           count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int,
+                                       before: Int, count: Int) {
+                if (::albumsList.isInitialized) {
+                    viewModelAdapter!!.albums =
+                        albumsList.filter { it.name.contains(s, ignoreCase = true) }
+                }
+            }
+        })
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -67,6 +86,7 @@ class AlbumsFragment : Fragment() {
         viewModel.albums.observe(viewLifecycleOwner, Observer<List<Album>> {
             it.apply {
                 viewModelAdapter!!.albums = this
+                albumsList = this
             }
         })
         viewModel.eventNetworkError.observe(viewLifecycleOwner, Observer<Boolean> { isNetworkError ->

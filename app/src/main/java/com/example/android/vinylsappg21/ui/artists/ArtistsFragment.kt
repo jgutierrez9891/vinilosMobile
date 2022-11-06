@@ -60,9 +60,10 @@ class ArtistsFragment : Fragment() {
 
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
-//                textView.text =s
-                viewModelAdapter!!.artists = artistsList.filter { it.name.contains(s, ignoreCase = true) }
-//                viewModelAdapter!!.artists = artistsList.any()
+                if (::artistsList.isInitialized) {
+                    viewModelAdapter!!.artists =
+                        artistsList.filter { it.name.contains(s, ignoreCase = true) }
+                }
             }
         })
     }
