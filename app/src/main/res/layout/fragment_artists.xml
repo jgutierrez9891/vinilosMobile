@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.artists.ArtistsFragment">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        tools:context=".AlbumsActivity"
+        tools:ignore="MissingConstraints">
+<!--        tools:context=".AlbumsActivity"-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            tools:context=".AlbumsActivity"
+            android:weightSum="2">
+            <!--        tools:context=".AlbumsActivity"-->
+            <TextView
+                android:id="@+id/artists_fragment_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_weight="1"
+                android:text="@string/title_artists"
+                android:textSize="30sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            tools:context=".AlbumsActivity"
+            android:weightSum="2">
+            <!--        tools:context=".AlbumsActivity"-->
+
+            <TextView
+                android:id="@+id/artists_fragment_desc"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_gravity="start"
+                android:gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="@string/artists_fragment_desc"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/searchTextArtista"
+                android:layout_width="29dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="Buscar" />
+        </LinearLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:context=".ui.AlbumFragment"
+            tools:layout_editor_absoluteX="16dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/artistsRv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/album_item" />
+        </FrameLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
