@@ -6,18 +6,227 @@
     android:layout_height="match_parent"
     tools:context=".ui.collectors.CollectorsFragment">
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/text_slideshow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".AlbumsActivity"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/albums_fragment_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_weight="1"
+            android:text="@string/menu_collectors"
+            android:textSize="30sp" />
+    </LinearLayout>
+
     <TextView
         android:id="@+id/text_slideshow"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
+        android:layout_marginBottom="77dp"
+        android:paddingLeft="10dp"
+        android:text="Encuentra a los Coleccionistas"
         android:textSize="20sp"
-        android:text="Coleccionistas"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+
+    <TableLayout
+        android:id="@+id/tableLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="45dp"
+        android:layout_weight="1.0"
+        android:stretchColumns="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/text_slideshow">
+
+        <TableRow
+            android:gravity="center">
+
+
+            <TextView
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="Coleccionista 1"
+                android:textSize="18sp" />
+
+            <TextView
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="Coleccionista 2"
+                android:textSize="18sp" />
+        </TableRow>
+        <TableRow
+            android:layout_marginBottom="25dp"
+            android:gravity="center">
+
+
+            <TextView
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="colec1@col.co"
+                android:textSize="15sp" />
+
+            <TextView
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="colec2@col.co"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="200dp"
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="Coleccionista 3"
+                android:textSize="18sp" />
+
+            <TextView
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="Coleccionista 4"
+                android:textSize="18sp" />
+        </TableRow>
+        <TableRow
+            android:layout_marginBottom="25dp"
+            android:gravity="center">
+
+
+            <TextView
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="colec3@col.co"
+                android:textSize="15sp" />
+
+            <TextView
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="colec4@col.co"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="200dp"
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="Coleccionista 5"
+                android:textSize="18sp" />
+
+            <TextView
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="Coleccionista 6"
+                android:textSize="18sp" />
+        </TableRow>
+        <TableRow
+            android:layout_marginBottom="25dp"
+            android:gravity="center">
+
+
+            <TextView
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="colec5@col.co"
+                android:textSize="15sp" />
+
+            <TextView
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="colec6@col.co"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="200dp"
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="Coleccionista 7"
+                android:textSize="18sp" />
+
+            <TextView
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="Coleccionista 8"
+                android:textSize="18sp" />
+        </TableRow>
+        <TableRow
+            android:layout_marginBottom="25dp"
+            android:gravity="center">
+
+
+            <TextView
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="colec7@col.co"
+                android:textSize="15sp" />
+
+            <TextView
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="colec8@col.co"
+                android:textSize="15sp" />
+        </TableRow>
+        <TableRow
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="200dp"
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="Coleccionista 9"
+                android:textSize="18sp" />
+
+            <TextView
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="Coleccionista 10"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_height="48dp"
+            android:layout_marginBottom="25dp"
+            android:gravity="center">
+
+
+            <TextView
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="colec9@col.co"
+                android:textSize="15sp" />
+
+            <TextView
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="colec10@col.co"
+                android:textSize="15sp" />
+        </TableRow>
+    </TableLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
