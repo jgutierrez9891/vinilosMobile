@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="artist" type="com.example.android.vinylsappg21.models.Artist"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.artists.ArtistDetailFragment">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            tools:context=".AlbumsActivity"
+            tools:ignore="MissingConstraints">
+            <!--        tools:context=".AlbumsActivity"-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                tools:context=".AlbumsActivity"
+                android:weightSum="2">
+                <!--        tools:context=".AlbumsActivity"-->
+                <TextView
+                    android:id="@+id/artists_fragment_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_weight="1"
+                    android:text="@{artist.name}"
+                    android:textSize="30sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                tools:context=".AlbumsActivity"
+                android:weightSum="2">
+                <!--        tools:context=".AlbumsActivity"-->
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/artist_detail_fragment_img"
+                    android:layout_width="300dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="start"
+                    android:gravity="center_vertical"
+                    android:layout_weight="1"
+                    app:imageURL="@{artist.image}"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/birthday_artist_desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_gravity="start"
+                        android:gravity="center_vertical"
+                        android:text="@string/birthday_artist_desc"
+                        android:background="@null"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/birthday_artist"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_gravity="start"
+                        android:gravity="center_vertical"
+                        android:text="@{artist.birthday.toString()}"
+                        android:background="@null"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/details_artist_desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_gravity="start"
+                        android:gravity="center_vertical"
+                        android:text="Descripción"
+                        android:background="@null"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/details_artist"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:gravity="center_vertical"
+                        android:text="@{artist.description}"
+                        android:background="@null"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/albums_artist_desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_gravity="start"
+                        android:gravity="center_vertical"
+                        android:text="@string/albums_artist_desc"
+                        android:background="@null"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/albums_artist"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:gravity="center_vertical"
+                        android:text="- Buscando América \n- Poeta del pueblo"
+                        android:background="@null"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
