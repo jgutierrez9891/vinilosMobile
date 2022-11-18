@@ -15,26 +15,12 @@
         android:id="@+id/nav_artists_menu"
         android:name="com.example.android.vinylsappg21.ui.artists.ArtistsFragment"
         android:label="@string/menu_artists"
-        tools:layout="@layout/fragment_artists" >
-        <action
-            android:id="@+id/action_nav_artists_menu_to_nav_details_artists"
-            app:destination="@id/nav_details_artists" />
-    </fragment>
+        tools:layout="@layout/fragment_artists" />
 
     <fragment
         android:id="@+id/nav_collectors_menu"
         android:name="com.example.android.vinylsappg21.ui.collectors.CollectorsFragment"
         android:label="@string/menu_collectors"
         tools:layout="@layout/fragment_collectors" />
-
-    <fragment
-        android:id="@+id/nav_details_artists"
-        android:name="com.example.android.vinylsappg21.ui.artists.ArtistDetailFragment"
-        android:label="detalles_artistas"
-        tools:layout="@layout/fragment_artist_detail" >
-        <argument
-            android:name="artistId"
-            app:argType="integer" />
-    </fragment>
 
 </navigation>
