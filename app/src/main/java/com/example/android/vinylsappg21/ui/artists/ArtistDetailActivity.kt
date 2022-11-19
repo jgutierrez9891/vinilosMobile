@@ -38,15 +38,13 @@ class ArtistDetailActivity : AppCompatActivity() {
         birthdayArtist = findViewById(R.id.birthday_artist)
         val parser = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.000'Z'")
         val formatter = SimpleDateFormat("yyyy/MM/dd")
-        val releaseDate: String = formatter.format(parser.parse(intent.getStringExtra("birth_date")))
-        birthdayArtist.text = releaseDate
+        birthdayArtist.text = formatter.format(parser.parse(intent.getStringExtra("birth_date")))
 
         descArtist = findViewById(R.id.details_artist)
         descArtist.text = intent.getStringExtra("description")
 
         albumsArtist = findViewById(R.id.albums_artist)
         albumsArtist.text = intent.getStringArrayListExtra("albums").toString()
-
 
     }
 }

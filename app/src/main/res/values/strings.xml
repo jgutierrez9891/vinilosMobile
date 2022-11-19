@@ -3,12 +3,9 @@
     <string name="body_landing">Ingresar Como</string>
     <string name="visitor"><b>VISITANTE</b></string>
     <string name="collector"><b>COLECCIONISTA</b></string>
-    <string name="button_iniciar"><b>Iniciar</b></string>
     <string name="title_activity_albums">Álbums</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Vinilos App</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="menu_albums">Álbums</string>
@@ -19,7 +16,6 @@
     <string name="albums_fragment_desc">Encuentra tu álbum favorito</string>
     <string name="artists_fragment_desc">Encuentra tu artista favorito</string>
     <string name="birthday_artist_desc">Fecha de nacimiento</string>
-    <string name="details_artist_desc">Descripción</string>
     <string name="albums_artist_desc">Albumes</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="album_lbl_releaseDate">Fecha de lanzamiento</string>
@@ -27,4 +23,5 @@
     <string name="album_lbl_recordLabel">Sello discográfico</string>
     <string name="album_lbl_desCoverImg">Portada del álbum</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="artist_detail_desc">Descripción</string>
 </resources>
