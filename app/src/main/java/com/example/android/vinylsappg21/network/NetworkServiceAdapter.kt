@@ -74,24 +74,23 @@ class NetworkServiceAdapter constructor(context: Context) {
             }))
     }
 
-    fun getCollectors(onComplete:(resp:List<Collector>)->Unit, onError: (error:VolleyError)->Unit){
+    suspend fun getCollectors() = suspendCoroutine<List<Collector>>{ cont->
         requestQueue.add(getRequest("collectors",
-            Response.Listener<String> { response ->
+            { response ->
                 val resp = JSONArray(response)
                 val list = mutableListOf<Collector>()
-                var item:JSONObject? = null
-                for (i in 0 until resp.length()) {
-                    item = resp.getJSONObject(i)
-                    list.add(i, Collector(collectorId = item.getInt("id"),name = item.getString("name"), telephone = item.getString("telephone"), email = item.getString("email")))
+                for (i in 0 until resp.length()) { //inicializado como variable de retorno
+                    val item = resp.getJSONObject(i)
+                    val collector = Collector(collectorId = item.getInt("id"),name = item.getString("name"), telephone = item.getString("telephone"), email = item.getString("email"))
+                    list.add(collector) //se agrega a medida que se procesa la respuesta
                 }
-                list.sortBy{it.name?.toString()}
-                onComplete(list)
+                cont.resume(list)
             },
-            Response.ErrorListener {
-                onError(it)
+            {
+                cont.resumeWithException(it)
             }))
-
     }
+
 
     fun JSONArray.toArrayList(): ArrayList<String> {
         val list = arrayListOf<String>()
