@@ -13,6 +13,9 @@ import com.example.android.vinylsappg21.models.Artist
 import com.example.android.vinylsappg21.models.Collector
 import org.json.JSONArray
 import org.json.JSONObject
+import kotlin.coroutines.resume
+import kotlin.coroutines.resumeWithException
+import kotlin.coroutines.suspendCoroutine
 
 class NetworkServiceAdapter constructor(context: Context) {
     companion object{
@@ -29,7 +32,8 @@ class NetworkServiceAdapter constructor(context: Context) {
         // applicationContext keeps you from leaking the Activity or BroadcastReceiver if someone passes one in.
         Volley.newRequestQueue(context.applicationContext)
     }
-    fun getAlbums(onComplete:(resp:List<Album>)->Unit, onError: (error:VolleyError)->Unit){
+
+    suspend fun getAlbums() = suspendCoroutine<List<Album>> { cont->
         requestQueue.add(getRequest("albums",
             { response ->
                 val resp = JSONArray(response)
@@ -40,10 +44,10 @@ class NetworkServiceAdapter constructor(context: Context) {
                     list.add(i, Album(albumId = item.getInt("id"),name = item.getString("name"), cover = item.getString("cover"), recordLabel = item.getString("recordLabel"), releaseDate = item.getString("releaseDate"), genre = item.getString("genre"), description = item.getString("description")))
                 }
                 list.sortBy{it.name?.toString()}
-                onComplete(list)
+                cont.resume(list)
             },
             {
-                onError(it)
+                cont.resumeWithException(it)
             }))
     }
 
