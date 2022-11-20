@@ -51,23 +51,23 @@ class NetworkServiceAdapter constructor(context: Context) {
             }))
     }
 
-    fun getArtists(onComplete:(resp:List<Artist>)->Unit, onError: (error:VolleyError)->Unit){
+    suspend fun getArtists() =suspendCoroutine<List<Artist>>{ cont->
         requestQueue.add(getRequest("musicians",
-            Response.Listener<String> { response ->
+            { response ->
                 val resp = JSONArray(response)
                 val list = mutableListOf<Artist>()
                 var albumsList = arrayListOf<String>()
                 var item:JSONObject? = null
                 for (i in 0 until resp.length()) {
-                    item = resp.getJSONObject(i)
+                    val item = resp.getJSONObject(i)
                     if (item.getJSONArray("albums").length()>0){
                         val jsonArray = item.getJSONArray("albums")
                         albumsList = jsonArray.toArrayList()
                     }
-                    list.add(i, Artist(artistId = item.getInt("id"),name = item.getString("name"), image = item.getString("image"), description = item.getString("description"), birthday = item.getString("birthDate"), albums = albumsList))
+                    val artist= Artist(artistId = item.getInt("id"),name = item.getString("name"), image = item.getString("image"), description = item.getString("description"), birthday = item.getString("birthDate"), albums = albumsList)
+                    list.add(artist)
                 }
-                list.sortBy{it.name?.toString()}
-                onComplete(list)
+                cont.resume(list)
             },
             Response.ErrorListener {
                 onError(it)
