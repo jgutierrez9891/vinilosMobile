@@ -8,14 +8,10 @@ import com.example.android.vinylsappg21.repositories.ArtistsRepository
 class ArtistViewModel(application: Application) :  AndroidViewModel(application) {
 
     private val _artists = MutableLiveData<List<Artist>>()
-    private val _artist = MutableLiveData<Artist>()
     private val artistsRepository = ArtistsRepository(application)
 
     val artists: LiveData<List<Artist>>
         get() = _artists
-
-    val artist: LiveData<Artist>
-        get() = _artist
 
     private var _eventNetworkError = MutableLiveData<Boolean>(false)
 
