@@ -69,8 +69,8 @@ class NetworkServiceAdapter constructor(context: Context) {
                 }
                 cont.resume(list)
             },
-            Response.ErrorListener {
-                onError(it)
+            {
+                cont.resumeWithException(it)
             }))
     }
 
