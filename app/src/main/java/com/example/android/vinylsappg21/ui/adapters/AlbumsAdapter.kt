@@ -17,7 +17,9 @@ class AlbumsAdapter: RecyclerView.Adapter<AlbumsAdapter.AlbumViewHolder>(){
     var albums :List<Album> = emptyList()
         set(value) {
             field = value
-            notifyDataSetChanged()
+            for (i in field.indices) {
+                notifyItemChanged(i)
+            }
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlbumViewHolder {
@@ -46,6 +48,7 @@ class AlbumsAdapter: RecyclerView.Adapter<AlbumsAdapter.AlbumViewHolder>(){
                 it.startActivity(intent)
             }
         }
+        //notifyItemChanged(position)
     }
 
     override fun getItemCount(): Int {
