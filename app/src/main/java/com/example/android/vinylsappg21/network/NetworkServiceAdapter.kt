@@ -1,6 +1,5 @@
 package com.example.android.vinylsappg21.network
 
-import VolleyBroker.Companion.getRequest
 import android.content.Context
 import com.android.volley.Request
 import com.android.volley.RequestQueue
@@ -13,7 +12,6 @@ import com.example.android.vinylsappg21.models.Album
 import com.example.android.vinylsappg21.models.Artist
 import com.example.android.vinylsappg21.models.Collector
 import org.json.JSONArray
-import org.json.JSONException
 import org.json.JSONObject
 
 class NetworkServiceAdapter constructor(context: Context) {
@@ -36,8 +34,9 @@ class NetworkServiceAdapter constructor(context: Context) {
             Response.Listener<String> { response ->
                 val resp = JSONArray(response)
                 val list = mutableListOf<Album>()
+                var item:JSONObject? = null
                 for (i in 0 until resp.length()) {
-                    val item = resp.getJSONObject(i)
+                    item = resp.getJSONObject(i)
                     list.add(i, Album(albumId = item.getInt("id"),name = item.getString("name"), cover = item.getString("cover"), recordLabel = item.getString("recordLabel"), releaseDate = item.getString("releaseDate"), genre = item.getString("genre"), description = item.getString("description")))
                 }
                 list.sortBy{it.name?.toString()}
@@ -54,8 +53,9 @@ class NetworkServiceAdapter constructor(context: Context) {
                 val resp = JSONArray(response)
                 val list = mutableListOf<Artist>()
                 var albumsList = arrayListOf<String>()
+                var item:JSONObject? = null
                 for (i in 0 until resp.length()) {
-                    val item = resp.getJSONObject(i)
+                    item = resp.getJSONObject(i)
                     if (item.getJSONArray("albums").length()>0){
                         val jsonArray = item.getJSONArray("albums")
                         albumsList = jsonArray.toArrayList()
@@ -75,8 +75,9 @@ class NetworkServiceAdapter constructor(context: Context) {
             Response.Listener<String> { response ->
                 val resp = JSONArray(response)
                 val list = mutableListOf<Collector>()
+                var item:JSONObject? = null
                 for (i in 0 until resp.length()) {
-                    val item = resp.getJSONObject(i)
+                    item = resp.getJSONObject(i)
                     list.add(i, Collector(collectorId = item.getInt("id"),name = item.getString("name"), telephone = item.getString("telephone"), email = item.getString("email")))
                 }
                 list.sortBy{it.name?.toString()}
