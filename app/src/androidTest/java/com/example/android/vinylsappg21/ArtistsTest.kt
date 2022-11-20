@@ -51,7 +51,7 @@ class ArtistsTest {
         onView(withId(R.id.nav_artists_menu)).perform(click())
         onView(withId(R.id.artistsRv))
             .perform(actionOnItemAtPosition<ArtistsAdapter.ArtistViewHolder>(1, click()))
-        onView(withText(nameArtist)).check(matches(ViewMatchers.isDisplayed()))
+        onView(withText(nameArtist2)).check(matches(ViewMatchers.isDisplayed()))
     }
 
     @Test
