@@ -14,7 +14,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import com.adevinta.android.barista.assertion.BaristaListAssertions
 import com.example.android.vinylsappg21.ui.adapters.AlbumsAdapter
-import com.example.android.vinylsappg21.ui.adapters.ArtistsAdapter
+import com.example.android.vinylsappg21.ui.adapters.CollectorsAdapter
 import org.hamcrest.Matchers
 import org.junit.Rule
 import org.junit.Test
@@ -57,9 +57,9 @@ class ColeccionistaTest {
         onView(ViewMatchers.withContentDescription(R.string.navigation_drawer_open)).perform(click())
         onView(withId(R.id.nav_collectors_menu)).perform(click())
         onView(withId(R.id.collectorsRv))
-            .perform(RecyclerViewActions.scrollToPosition<ArtistsAdapter.ArtistViewHolder>(-1))
+            .perform(RecyclerViewActions.scrollToPosition<CollectorsAdapter.CollectorsViewHolder>(-1))
         onView(withId(R.id.collectorsRv))
-            .perform(RecyclerViewActions.scrollToPosition<ArtistsAdapter.ArtistViewHolder>(1))
+            .perform(RecyclerViewActions.scrollToPosition<CollectorsAdapter.CollectorsViewHolder>(1))
     }
 
     @Test
