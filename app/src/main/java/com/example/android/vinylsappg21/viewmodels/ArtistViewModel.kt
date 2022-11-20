@@ -17,12 +17,12 @@ class ArtistViewModel(application: Application) :  AndroidViewModel(application)
     val artist: LiveData<Artist>
         get() = _artist
 
-    private var _eventNetworkError = MutableLiveData<Boolean>(false)
+    private var _eventNetworkError = MutableLiveData(false)
 
     val eventNetworkError: LiveData<Boolean>
         get() = _eventNetworkError
 
-    private var _isNetworkErrorShown = MutableLiveData<Boolean>(false)
+    private var _isNetworkErrorShown = MutableLiveData(false)
 
     val isNetworkErrorShown: LiveData<Boolean>
         get() = _isNetworkErrorShown
@@ -52,7 +52,7 @@ class ArtistViewModel(application: Application) :  AndroidViewModel(application)
                 @Suppress("UNCHECKED_CAST")
                 return ArtistViewModel(app) as T
             }
-            throw IllegalArgumentException("Unable to construct viewmodel")
+            throw IllegalArgumentException("Unable to construct view-model")
         }
     }
 }

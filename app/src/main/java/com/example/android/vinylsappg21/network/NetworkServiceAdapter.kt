@@ -49,7 +49,7 @@ class NetworkServiceAdapter constructor(context: Context) {
 
     fun getArtists(onComplete:(resp:List<Artist>)->Unit, onError: (error:VolleyError)->Unit){
         requestQueue.add(getRequest("musicians",
-            Response.Listener<String> { response ->
+            { response ->
                 val resp = JSONArray(response)
                 val list = mutableListOf<Artist>()
                 var albumsList = arrayListOf<String>()
@@ -65,7 +65,7 @@ class NetworkServiceAdapter constructor(context: Context) {
                 list.sortBy{it.name?.toString()}
                 onComplete(list)
             },
-            Response.ErrorListener {
+            {
                 onError(it)
             }))
     }

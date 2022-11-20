@@ -1,7 +1,5 @@
 package com.example.android.vinylsappg21.models
 
-import java.sql.Date
-
 data class Artist(
     val artistId:Int,
     val name:String,
