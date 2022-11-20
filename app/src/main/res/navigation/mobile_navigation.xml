@@ -22,4 +22,5 @@
         android:name="com.example.android.vinylsappg21.ui.collectors.CollectorsFragment"
         android:label="@string/menu_collectors"
         tools:layout="@layout/fragment_collectors" />
+
 </navigation>
