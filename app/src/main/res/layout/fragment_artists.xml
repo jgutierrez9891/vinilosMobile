@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.artists.ArtistsFragment">
 
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -16,34 +15,42 @@
         android:paddingRight="10dp"
         tools:context=".AlbumsActivity"
         tools:ignore="MissingConstraints">
-<!--        tools:context=".AlbumsActivity"-->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            tools:context=".AlbumsActivity"
-            android:weightSum="2">
-            <!--        tools:context=".AlbumsActivity"-->
+            android:weightSum="2"
+            tools:context=".AlbumsActivity">
+
             <TextView
                 android:id="@+id/artists_fragment_title"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:layout_weight="1"
                 android:text="@string/title_artists"
                 android:textSize="30sp" />
+
+
+
+
+
+
+
+
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            tools:context=".AlbumsActivity"
-            android:weightSum="2">
-            <!--        tools:context=".AlbumsActivity"-->
+            android:weightSum="2"
+            tools:context=".AlbumsActivity">
 
             <TextView
                 android:id="@+id/artists_fragment_desc"
@@ -64,6 +71,7 @@
                 android:inputType="text"
                 android:hint="@string/buscarString" />
         </LinearLayout>
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
