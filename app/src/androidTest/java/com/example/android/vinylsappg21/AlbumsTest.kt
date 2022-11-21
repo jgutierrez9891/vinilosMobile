@@ -51,7 +51,7 @@ class AlbumsTest {
         onView(withId(R.id.visitor1)).perform(click())
         onView(withId(R.id.albumsRv))
             .perform(actionOnItemAtPosition<AlbumsAdapter.AlbumViewHolder>(1, click()))
-        onView(withText(titleAlbum2)).check(matches(isDisplayed()))
+        onView(withText(titleAlbum)).check(matches(isDisplayed()))
     }
 
     @Test

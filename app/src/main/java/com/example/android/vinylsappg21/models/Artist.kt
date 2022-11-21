@@ -4,7 +4,5 @@ data class Artist(
     val artistId:Int,
     val name:String,
     val image:String,
-    val description:String,
-    val birthday:String,
-    val albums: ArrayList<String>
+    val description:String
 )
