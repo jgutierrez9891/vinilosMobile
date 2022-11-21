@@ -4,21 +4,28 @@ import android.app.Application
 import androidx.lifecycle.*
 import com.example.android.vinylsappg21.models.Artist
 import com.example.android.vinylsappg21.repositories.ArtistsRepository
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class ArtistViewModel(application: Application) :  AndroidViewModel(application) {
 
     private val _artists = MutableLiveData<List<Artist>>()
+    private val _artist = MutableLiveData<Artist>()
     private val artistsRepository = ArtistsRepository(application)
 
     val artists: LiveData<List<Artist>>
         get() = _artists
 
-    private var _eventNetworkError = MutableLiveData<Boolean>(false)
+    val artist: LiveData<Artist>
+        get() = _artist
+
+    private var _eventNetworkError = MutableLiveData(false)
 
     val eventNetworkError: LiveData<Boolean>
         get() = _eventNetworkError
 
-    private var _isNetworkErrorShown = MutableLiveData<Boolean>(false)
+    private var _isNetworkErrorShown = MutableLiveData(false)
 
     val isNetworkErrorShown: LiveData<Boolean>
         get() = _isNetworkErrorShown
@@ -28,14 +35,19 @@ class ArtistViewModel(application: Application) :  AndroidViewModel(application)
     }
 
     private fun refreshDataFromNetwork() {
-        artistsRepository.refreshData({
-            _artists.postValue(it)
-            _eventNetworkError.value = false
-            _isNetworkErrorShown.value = false
-
-        },{
+        try {
+            viewModelScope.launch (Dispatchers.Default){
+                withContext(Dispatchers.IO){
+                    var data = artistsRepository.refreshData()
+                    _artists.postValue(data)
+                }
+                _eventNetworkError.postValue(false)
+                _isNetworkErrorShown.postValue(false)
+            }
+        }
+        catch (e:Exception){
             _eventNetworkError.value = true
-        })
+        }
     }
 
     fun onNetworkErrorShown() {
@@ -48,7 +60,7 @@ class ArtistViewModel(application: Application) :  AndroidViewModel(application)
                 @Suppress("UNCHECKED_CAST")
                 return ArtistViewModel(app) as T
             }
-            throw IllegalArgumentException("Unable to construct viewmodel")
+            throw IllegalArgumentException("Unable to construct view-model")
         }
     }
 }
