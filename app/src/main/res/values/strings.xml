@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">VinylsAppG21</string>
+    <string name="app_name">Vinilos App</string>
     <string name="body_landing">Ingresar Como</string>
     <string name="visitor"><b>VISITANTE</b></string>
     <string name="collector"><b>COLECCIONISTA</b></string>
@@ -17,5 +17,15 @@
     <string name="menu_collectors">Coleccionistas</string>
     <string name="btn_new_album">NUEVO ÁLBUM</string>
     <string name="albums_fragment_desc">Encuentra tu álbum favorito</string>
-    <string name="artists_fragment_desc">Encuentra tu artista favorito</string>
+    <string name="artists_fragment_desc">Encuentra tus artistas preferidos</string>
+    <string name="birthday_artist_desc">Fecha de nacimiento</string>
+    <string name="albums_artist_desc">Albumes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="album_lbl_releaseDate">Fecha de lanzamiento</string>
+    <string name="album_lbl_genre">Género</string>
+    <string name="album_lbl_recordLabel">Sello discográfico</string>
+    <string name="album_lbl_desCoverImg">Portada del álbum</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="artist_detail_desc">Descripción</string>
+    <string name="buscarString">Buscar</string>
 </resources>
