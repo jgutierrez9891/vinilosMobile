@@ -16,3 +16,4 @@ Para realiza la construcción de la aplicación en un entorno local se deben rea
 2. Ejecute la opción **Sync project with Gradle Files** ubicada en la barra de opciones de Android Studio para que se descarguen e instalen todas las librerias y dependencias requeridas.
 para la ejecución del proyecto.
 3. Una vez descargado el proyecto, ejecútelo desde el botón "Run" desde el IDE.
+test changes
