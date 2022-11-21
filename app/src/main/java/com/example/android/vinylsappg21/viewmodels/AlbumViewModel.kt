@@ -1,14 +1,10 @@
 package com.example.android.vinylsappg21.viewmodels
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.*
 import com.example.android.vinylsappg21.network.NetworkServiceAdapter
 import com.example.android.vinylsappg21.models.Album
 import com.example.android.vinylsappg21.repositories.AlbumsRepository
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class AlbumViewModel(application: Application) :  AndroidViewModel(application) {
 
@@ -33,19 +29,14 @@ class AlbumViewModel(application: Application) :  AndroidViewModel(application) 
     }
 
     private fun refreshDataFromNetwork() {
-        try {
-            viewModelScope.launch(Dispatchers.Default){
-                withContext(Dispatchers.IO){
-                    var data = albumsRepository.refreshData()
-                    _albums.postValue(data)
-                }
-                _eventNetworkError.postValue(false)
-                _isNetworkErrorShown.postValue(false)
-            }
-        }
-        catch (e:Exception){
+        albumsRepository.refreshData({
+            _albums.postValue(it)
+            _eventNetworkError.value = false
+            _isNetworkErrorShown.value = false
+
+        },{
             _eventNetworkError.value = true
-        }
+        })
     }
 
     fun onNetworkErrorShown() {
