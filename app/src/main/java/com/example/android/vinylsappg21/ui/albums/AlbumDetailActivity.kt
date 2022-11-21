@@ -28,8 +28,7 @@ class AlbumDetailActivity : AppCompatActivity() {
         tvReleaseDate= findViewById(R.id.tvReleaseDateText)
         val parser = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.000'Z'")
         val formatter = SimpleDateFormat("yyyy/MM/dd")
-        val releaseDate: String = formatter.format(parser.parse(intent.getStringExtra("release_date")))
-        tvReleaseDate.text = releaseDate
+        tvReleaseDate.text = formatter.format(parser.parse(intent.getStringExtra("release_date")))
 
         tvGenre= findViewById(R.id.tvGenreText)
         tvGenre.text = intent.getStringExtra("genre")
