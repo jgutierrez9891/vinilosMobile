@@ -46,5 +46,12 @@ class ArtistDetailActivity : AppCompatActivity() {
         albumsArtist = findViewById(R.id.albums_artist)
         albumsArtist.text = intent.getStringArrayListExtra("albums").toString()
 
+        // showing the back button in action bar
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

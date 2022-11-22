@@ -1,6 +1,9 @@
 package com.example.android.vinylsappg21.ui.albums
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +11,7 @@ import com.example.android.vinylsappg21.R
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import java.text.SimpleDateFormat
+
 
 class AlbumDetailActivity : AppCompatActivity() {
     private lateinit var tvAlbumName: TextView
@@ -47,5 +51,13 @@ class AlbumDetailActivity : AppCompatActivity() {
             override fun onError(e: Exception) {
             }
         })
+
+        // showing the back button in action bar
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
