@@ -28,7 +28,8 @@
                 android:inputType="textCapWords"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
-                android:textSize="25sp" />
+                android:textSize="25sp"
+                android:importantForAutofill="no" />
 
         </LinearLayout>
 
@@ -66,7 +67,8 @@
                             android:background="#EDEDED"
                             android:ems="10"
                             android:gravity="center_horizontal|center_vertical"
-                            android:inputType="textUri" />
+                            android:inputType="textUri"
+                            android:importantForAutofill="no" />
 
                     </LinearLayout>
 
@@ -93,6 +95,7 @@
                             android:layout_gravity="center_horizontal"
                             android:calendarViewShown="false"
                             android:clickable="true"
+                            android:focusable="true"
                             android:datePickerMode="spinner"
                             android:ems="10"
                             android:gravity="center_horizontal|center_vertical" />
@@ -180,7 +183,8 @@
                             android:background="#EDEDED"
                             android:ems="10"
                             android:gravity="center_horizontal|center_vertical"
-                            android:inputType="textMultiLine" />
+                            android:inputType="textMultiLine"
+                            android:importantForAutofill="no" />
                     </LinearLayout>
 
                     <Space

@@ -93,6 +93,16 @@ class NetworkServiceAdapter constructor(context: Context) {
             }))
     }
 
+    fun postAlbums(body: JSONObject, onComplete:(resp:JSONObject)->Unit , onError: (error:VolleyError)->Unit){
+        requestQueue.add(postRequest("albums",
+            body,
+            { response ->
+                onComplete(response)
+            },
+            {
+                onError(it)
+            }))
+    }
 
     fun JSONArray.toArrayList(): ArrayList<String> {
         val list = arrayListOf<String>()
