@@ -54,6 +54,7 @@ class AlbumDetailActivity : AppCompatActivity() {
 
         // showing the back button in action bar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setBackgroundDrawable(resources.getDrawable(R.drawable.side_nav_bar, null))
     }
 
     override fun onSupportNavigateUp(): Boolean {

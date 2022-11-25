@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/newAlbumActivity"
+    tools:context=".ui.albums.CreateAlbumActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/nav_header_height"
+            android:background="@drawable/backblue"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editTextAlumName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="#00FFFFFF"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint="@string/newAlbumNameHint"
+                android:inputType="textCapWords"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="25sp"
+                android:importantForAutofill="no" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvNewAlbumCoverURL_Lbl"
+                            android:layout_width="fill_parent"
+                            android:layout_height="40sp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:text="@string/album_lbl_coverURL"
+                            android:textColor="@android:color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/editTextCoverURL"
+                            android:layout_width="300sp"
+                            android:layout_height="40sp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:background="#EDEDED"
+                            android:ems="10"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:inputType="textUri"
+                            android:importantForAutofill="no" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvNewAlbumReleaseDateLbl"
+                            android:layout_width="fill_parent"
+                            android:layout_height="40sp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:text="@string/album_lbl_releaseDate"
+                            android:textColor="@android:color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <DatePicker
+                            android:id="@+id/datePickerReleaseDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:calendarViewShown="false"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:datePickerMode="spinner"
+                            android:ems="10"
+                            android:gravity="center_horizontal|center_vertical" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvNewAlbumGenreLbl"
+                            android:layout_width="fill_parent"
+                            android:layout_height="40sp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:text="@string/album_lbl_genre"
+                            android:textColor="@android:color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/spinnerGenres"
+                            android:layout_width="300sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:background="#EDEDED"
+                            android:ems="10"
+                            android:gravity="center_horizontal|center_vertical" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvNewAlbumRecordLabelLbl"
+                            android:layout_width="fill_parent"
+                            android:layout_height="40sp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:text="@string/album_lbl_recordLabel"
+                            android:textColor="@android:color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/spinnerRecordLabels"
+                            android:layout_width="300sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:background="#EDEDED"
+                            android:ems="10"
+                            android:gravity="center_horizontal|center_vertical" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvNewAlbumDescriptionLbl"
+                            android:layout_width="fill_parent"
+                            android:layout_height="40sp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:text="@string/album_description"
+                            android:textColor="@android:color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/editNewAlbumDescription"
+                            android:layout_width="300sp"
+                            android:layout_height="80sp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:background="#EDEDED"
+                            android:ems="10"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:inputType="textMultiLine"
+                            android:importantForAutofill="no" />
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="40sp"
+                        android:layout_weight="0" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <Space
+                            android:layout_width="40sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0" />
+                        <Button
+                            android:id="@+id/btnNewAlbumSaveAlbum"
+                            android:layout_width="150sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_weight="0"
+                            android:text="@string/newAlbumSave" />
+
+                        <Space
+                            android:layout_width="40sp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0" />
+
+                        <Button
+                            android:id="@+id/btnNewAlbumNewTrack"
+                            android:layout_width="150sp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:gravity="end"
+                            android:layout_weight="0"
+                            android:text="@string/newAlbumNewTrack" />
+                    </LinearLayout>
+                </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

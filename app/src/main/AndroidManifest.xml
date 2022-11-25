@@ -16,6 +16,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ui.albums.CreateAlbumActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ui.collectors.CollectorDetailActivity"
             android:exported="false">
             <meta-data
@@ -60,5 +67,4 @@
                 android:value="" />
         </activity>
     </application>
-
 </manifest>
