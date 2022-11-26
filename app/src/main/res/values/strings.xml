@@ -48,4 +48,7 @@
     <string name="contDesc_visitorButton">Ingreso a la aplicación con el rol visitante</string>
     <string name="contDesc_collectorButton">Ingreso a la aplicación con el rol coleccionista</string>
     <string name="albums_fragment_search">Buscar</string>
+    <string name="fill_all_fields">Debe diligenciar todos los campos</string>
+    <string name="create_album_fail">Ha ocurrido un error creando el álbum</string>
+    <string name="create_album_succes">Álbum creado exitosamente</string>
 </resources>
