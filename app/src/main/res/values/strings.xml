@@ -25,6 +25,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="artist_detail_desc">Descripción</string>
     <string name="buscarString">Buscar</string>
+    <string name="collector_tel_desc">Teléfono:</string>
+    <string name="collector_email_desc">Email:</string>
+    <string name="collector_albumes_desc">Álbumes</string>
     <string name="albumName">Nombre del Álbum</string>
     <string name="newAlbumNameHint">Nombre del Nuevo Álbum</string>
     <string name="album_lbl_coverURL">Portada del álbum</string>
