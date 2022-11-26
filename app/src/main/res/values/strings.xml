@@ -47,4 +47,5 @@
     <string name="contDesc_appLogo">Logo dela aplicación: disco de vinilo</string>
     <string name="contDesc_visitorButton">Ingreso a la aplicación con el rol visitante</string>
     <string name="contDesc_collectorButton">Ingreso a la aplicación con el rol coleccionista</string>
+    <string name="albums_fragment_search">Buscar</string>
 </resources>
