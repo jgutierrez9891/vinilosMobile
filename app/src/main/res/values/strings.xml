@@ -51,4 +51,6 @@
     <string name="fill_all_fields">Debe diligenciar todos los campos</string>
     <string name="create_album_fail">Ha ocurrido un error creando el álbum</string>
     <string name="create_album_succes">Álbum creado exitosamente</string>
+    <string name="title_albums_fragment">Álbumes disponibles</string>
+    <string name="base_content_desc_album_cover">Imagen de portada del album</string>
 </resources>
