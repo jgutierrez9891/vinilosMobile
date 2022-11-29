@@ -69,8 +69,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="text"
-                android:hint="@string/albums_fragment_search"
-                android:importantForAutofill="no" />
+                android:hint="Buscar" />
         </LinearLayout>
 
         <FrameLayout

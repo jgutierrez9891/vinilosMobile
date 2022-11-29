@@ -67,7 +67,6 @@ class NetworkServiceAdapter constructor(context: Context) {
                     val artist= Artist(artistId = item.getInt("id"),name = item.getString("name"), image = item.getString("image"), description = item.getString("description"), birthday = item.getString("birthDate"), albums = albumsList)
                     list.add(artist)
                 }
-                list.sortBy{it.name?.toString()}
                 cont.resume(list)
             },
             {
@@ -85,13 +84,13 @@ class NetworkServiceAdapter constructor(context: Context) {
                     val collector = Collector(collectorId = item.getInt("id"),name = item.getString("name"), telephone = item.getString("telephone"), email = item.getString("email"))
                     list.add(collector) //se agrega a medida que se procesa la respuesta
                 }
-                list.sortBy{it.name?.toString()}
                 cont.resume(list)
             },
             {
                 cont.resumeWithException(it)
             }))
     }
+
 
     fun JSONArray.toArrayList(): ArrayList<String> {
         val list = arrayListOf<String>()

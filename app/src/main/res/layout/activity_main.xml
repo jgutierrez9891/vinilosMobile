@@ -15,8 +15,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_vinilos"
-                android:contentDescription="@string/contDesc_appLogo"/>
+                android:src="@drawable/ic_vinilos" />
         </TableRow>
         <TableRow android:gravity="center">
             <TextView
@@ -34,8 +33,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/white_space"
-                android:contentDescription="@null"/>
+                android:src="@drawable/white_space" />
         </TableRow>
         <TableRow android:gravity="center">
             <TextView
@@ -54,8 +52,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="45dp"
-                android:src="@drawable/white_space"
-                android:contentDescription="@null"/>
+                android:src="@drawable/white_space" />
         </TableRow>
 
         <TableRow
@@ -73,15 +70,13 @@
                         android:id="@+id/visitor1"
                         android:layout_width="211dp"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_visitantes"
-                        android:contentDescription="@string/contDesc_visitorButton"/>
+                        android:src="@drawable/ic_visitantes" />
 
                     <ImageView
                         android:id="@+id/collector1"
                         android:layout_width="177dp"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_coleccionistas"
-                        android:contentDescription="@string/contDesc_collectorButton"/>
+                        android:src="@drawable/ic_coleccionistas" />
                 </TableRow>
 
                 <TableRow android:gravity="center">

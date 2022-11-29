@@ -53,8 +53,7 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:hint="Buscar"
-                    android:inputType="text"
-                    android:importantForAutofill="no" />
+                    android:inputType="text" />
             </TableRow>
         </TableLayout>
 
