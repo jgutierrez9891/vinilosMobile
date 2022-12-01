@@ -10,6 +10,7 @@ import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.Headers
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 // class TracksRepository (val application: Application){
 //     suspend fun refreshData(): List<Track> {
@@ -19,6 +20,6 @@ import retrofit2.http.POST
 
 interface RetroServiceInterfaceTrack {
 
-    @POST(":albumId/tracks") //interpolar el albumID
-    fun createTrack(@Body params: Track): Call<Track>
+    @POST("albums/{album_id}/tracks") //interpolar el albumID
+    fun createTrack(@Path("album_id") album_id: String, @Body params: Track): Call<Track>
 }

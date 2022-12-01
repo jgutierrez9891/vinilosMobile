@@ -26,7 +26,8 @@ class CreateTrackActivity : AppCompatActivity() {
         supportActionBar?.setBackgroundDrawable(resources.getDrawable(R.drawable.side_nav_bar, null))
 
         btnNewAlbumSaveTrack.setOnClickListener {
-            createTrack()
+            val album_id = intent.getStringExtra("albumid").toString()
+            createTrack(album_id)
         }
     }
 
@@ -35,14 +36,14 @@ class CreateTrackActivity : AppCompatActivity() {
         return true
     }
 
-    private fun createTrack() {
+    private fun createTrack(album_id: String) {
 
 
         if(editTextTrackName.text.isNullOrBlank() || editTextTrackMinutes.text.isNullOrBlank() || editTextTrackSeconds.text.isNullOrBlank() ){
             Toast.makeText(this@CreateTrackActivity, getString(R.string.fill_all_fields), Toast.LENGTH_LONG).show()
         }else{
             val track  = Track(null, editTextTrackName.text.toString(), editTextTrackMinutes.text.toString()+":"+editTextTrackSeconds.text.toString())
-            viewModel.createNewTrack(track)
+            viewModel.createNewTrack(album_id, track)
         }
     }
 

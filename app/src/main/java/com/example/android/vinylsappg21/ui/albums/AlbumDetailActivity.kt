@@ -2,20 +2,17 @@ package com.example.android.vinylsappg21.ui.albums
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.MenuItem
+import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.android.vinylsappg21.GlobalStuff
 import com.example.android.vinylsappg21.R
+import com.example.android.vinylsappg21.ui.tracks.CreateTrackActivity
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import java.text.SimpleDateFormat
-import android.widget.Button
-import com.example.android.vinylsappg21.databinding.ActivityAlbumDetailBinding
-import com.example.android.vinylsappg21.GlobalStuff
-import android.view.View
-import com.example.android.vinylsappg21.ui.tracks.CreateTrackActivity
 
 
 class AlbumDetailActivity : AppCompatActivity() {
@@ -25,11 +22,13 @@ class AlbumDetailActivity : AppCompatActivity() {
     private lateinit var tvRecordLabel: TextView
     private lateinit var tvDescription: TextView
     private lateinit var ivCover: ImageView
+    private var albumId: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_album_detail)
 
+        albumId = intent.getStringExtra("album_id").toString()
         tvAlbumName= findViewById(R.id.tvAlbumName)
         tvAlbumName.text = intent.getStringExtra("album_name")
 
@@ -72,6 +71,7 @@ class AlbumDetailActivity : AppCompatActivity() {
             val activity = v!!.context as AppCompatActivity;
             activity?.let{
                 val intent = Intent (it, CreateTrackActivity::class.java)
+                intent.putExtra("albumid", albumId)
                 it.startActivity(intent)
             }
         }

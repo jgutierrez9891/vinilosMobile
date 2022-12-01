@@ -16,9 +16,9 @@ class CreateTrackViewModel(application: Application): AndroidViewModel(applicati
         return createNewTrackLiveData
     }
 
-    fun createNewTrack(track: Track) {
+    fun createNewTrack(album_id: String, track: Track) {
         val retroService  = RetroInstance.getRetroInstance().create(RetroServiceInterfaceTrack::class.java)
-        val call = retroService.createTrack(track)
+        val call = retroService.createTrack(album_id, track)
         call.enqueue(object: Callback<Track> {
             override fun onFailure(call: Call<Track>, t: Throwable) {
                 createNewTrackLiveData.postValue(null)
