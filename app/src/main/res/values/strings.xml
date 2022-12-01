@@ -30,6 +30,12 @@
     <string name="collector_albumes_desc">Álbumes</string>
     <string name="albumName">Nombre del Álbum</string>
     <string name="newAlbumNameHint">Nombre del Nuevo Álbum</string>
+    <string name="newTrackNameHint">Nombre del Nuevo Track</string>
+    <string name="editTextTrackMinutesLabelText">Minutos de duracion</string>
+    <string name="editTextTrackSecondsLabelText">Segundos de duracion</string>
+    <string name="newTrackSave">Guardar nuevo track</string>
+    <string name="create_track_fail">Ha ocurrido un error creando el track</string>
+    <string name="create_track_succes">Track creado exitosamente</string>
     <string name="album_lbl_coverURL">Portada del álbum</string>
     <string-array name="Genres">
         <item>Classical</item>

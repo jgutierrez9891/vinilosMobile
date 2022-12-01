@@ -41,6 +41,7 @@ class AlbumsAdapter: RecyclerView.Adapter<AlbumsAdapter.AlbumViewHolder>(){
             val activity = v!!.context as AppCompatActivity;
             activity?.let{
                 val intent = Intent (it, AlbumDetailActivity::class.java)
+                intent.putExtra("album_id", albums[position].albumId.toString())
                 intent.putExtra("album_name", albums[position].name)
                 intent.putExtra("release_date", albums[position].releaseDate)
                 intent.putExtra("genre", albums[position].genre)
