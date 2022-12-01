@@ -55,20 +55,9 @@ class AlbumDetailActivity : AppCompatActivity() {
             }
         })
 
-        val button: Button = findViewById<Button>(R.id.new_track_button)
-        if(GlobalStuff.userType == 0) {
-            button.setVisibility(View.GONE);
-        } else {
-            button.setVisibility(View.VISIBLE);
-        }
-        
-        button.setOnClickListener { v ->
-            val activity = v!!.context as AppCompatActivity;
-            activity?.let{
-                val intent = Intent (it, NewTrackActivity::class.java)
-                it.startActivity(intent)
-            }
-        }
+        // showing the back button in action bar
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setBackgroundDrawable(resources.getDrawable(R.drawable.side_nav_bar, null))
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -54,81 +54,69 @@
                     />
             </androidx.cardview.widget.CardView>
 
-            <ScrollView
+            <LinearLayout
+                android:id="@+id/listArtistDetails"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_weight="1">
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/birthday_artist_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="start"
+                    android:gravity="center_vertical"
+                    android:text="@string/birthday_artist_desc"
+                    android:background="@null"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/birthday_artist"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="start"
+                    android:gravity="center_vertical"
+                    android:background="@null"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/details_artist_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="start"
+                    android:gravity="center_vertical"
+                    android:text="@string/artist_detail_desc"
+                    android:background="@null"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/details_artist"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_gravity="start"
+                    android:gravity="center_vertical"
+                    android:background="@null"
+                    android:textSize="15sp" />
 
-                    <TextView
-                        android:id="@+id/birthday_artist_desc"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_gravity="start"
-                        android:gravity="center_vertical"
-                        android:text="@string/birthday_artist_desc"
-                        android:background="@null"
-                        android:textSize="15sp"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:id="@+id/birthday_artist"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_gravity="start"
-                        android:gravity="center_vertical"
-                        android:background="@null"
-                        android:textSize="15sp" />
-
-                    <TextView
-                        android:id="@+id/details_artist_desc"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_gravity="start"
-                        android:gravity="center_vertical"
-                        android:text="@string/artist_detail_desc"
-                        android:background="@null"
-                        android:textSize="15sp"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:id="@+id/details_artist"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start"
-                        android:gravity="center_vertical"
-                        android:background="@null"
-                        android:textSize="15sp" />
-
-                    <TextView
-                        android:id="@+id/albums_artist_desc"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_gravity="start"
-                        android:gravity="center_vertical"
-                        android:text="@string/albums_artist_desc"
-                        android:background="@null"
-                        android:textSize="15sp"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:id="@+id/albums_artist"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start"
-                        android:gravity="center_vertical"
-                        android:background="@null"
-                        android:textSize="15sp" />
-
-                </LinearLayout>
-
-            </ScrollView>
-
-
+                <TextView
+                    android:id="@+id/albums_artist_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="start"
+                    android:gravity="center_vertical"
+                    android:text="@string/albums_artist_desc"
+                    android:background="@null"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+                <ListView
+                    android:id="@+id/albumsList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </ListView>
+            </LinearLayout>
         </LinearLayout>
 
 

@@ -42,7 +42,7 @@ class ArtistsAdapter : RecyclerView.Adapter<ArtistsAdapter.ArtistViewHolder>(){
                 intent.putExtra("image_url", artists[position].image)
                 intent.putExtra("description", artists[position].description)
                 intent.putExtra("birth_date", artists[position].birthday)
-                intent.putStringArrayListExtra("albums", arrayListOf(artists[position].albums[0]))
+                intent.putStringArrayListExtra("albums", arrayListOf(*artists[position].albums))
                 it.startActivity(intent)
             }
 

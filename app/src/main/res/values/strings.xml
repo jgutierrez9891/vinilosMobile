@@ -25,4 +25,35 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="artist_detail_desc">Descripción</string>
     <string name="buscarString">Buscar</string>
+    <string name="collector_tel_desc">Teléfono:</string>
+    <string name="collector_email_desc">Email:</string>
+    <string name="collector_albumes_desc">Álbumes</string>
+    <string name="albumName">Nombre del Álbum</string>
+    <string name="newAlbumNameHint">Nombre del Nuevo Álbum</string>
+    <string name="album_lbl_coverURL">Portada del álbum</string>
+    <string-array name="Genres">
+        <item>Classical</item>
+        <item>Salsa</item>
+        <item>Rock</item>
+        <item>Folk</item>
+    </string-array>
+    <string-array name="RecordLabels">
+        <item>Sony Music</item>
+        <item>EMI</item>
+        <item>Discos Fuentes</item>
+        <item>Elektra</item>
+        <item>Fania Records</item>
+    </string-array>
+    <string name="album_description">Descripción</string>
+    <string name="newAlbumSave">Guardar</string>
+    <string name="newAlbumNewTrack">Nuevo track</string>
+    <string name="contDesc_appLogo">Logo dela aplicación: disco de vinilo</string>
+    <string name="contDesc_visitorButton">Ingreso a la aplicación con el rol visitante</string>
+    <string name="contDesc_collectorButton">Ingreso a la aplicación con el rol coleccionista</string>
+    <string name="albums_fragment_search">Buscar</string>
+    <string name="fill_all_fields">Debe diligenciar todos los campos</string>
+    <string name="create_album_fail">Ha ocurrido un error creando el álbum</string>
+    <string name="create_album_succes">Álbum creado exitosamente</string>
+    <string name="title_albums_fragment">Álbumes disponibles</string>
+    <string name="base_content_desc_album_cover">Imagen de portada del album</string>
 </resources>
