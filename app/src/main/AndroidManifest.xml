@@ -23,6 +23,13 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".ui.tracks.CreateTrackActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ui.collectors.CollectorDetailActivity"
             android:exported="false">
             <meta-data

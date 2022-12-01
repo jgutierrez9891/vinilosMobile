@@ -15,6 +15,7 @@ import android.widget.Button
 import com.example.android.vinylsappg21.databinding.ActivityAlbumDetailBinding
 import com.example.android.vinylsappg21.GlobalStuff
 import android.view.View
+import com.example.android.vinylsappg21.ui.tracks.CreateTrackActivity
 
 
 class AlbumDetailActivity : AppCompatActivity() {
@@ -58,6 +59,22 @@ class AlbumDetailActivity : AppCompatActivity() {
         // showing the back button in action bar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setBackgroundDrawable(resources.getDrawable(R.drawable.side_nav_bar, null))
+
+        val newTrackButton: Button = findViewById(R.id.new_track_button)
+
+        if(GlobalStuff.userType == 0) {
+            newTrackButton.setVisibility(View.GONE);
+        } else {
+            newTrackButton.setVisibility(View.VISIBLE);
+        }
+
+        newTrackButton.setOnClickListener { v ->
+            val activity = v!!.context as AppCompatActivity;
+            activity?.let{
+                val intent = Intent (it, CreateTrackActivity::class.java)
+                it.startActivity(intent)
+            }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
