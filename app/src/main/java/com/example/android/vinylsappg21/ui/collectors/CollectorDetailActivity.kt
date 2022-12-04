@@ -6,7 +6,6 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.TextView
 import com.example.android.vinylsappg21.R
-import com.example.android.vinylsappg21.models.Collector
 
 class CollectorDetailActivity : AppCompatActivity() {
 

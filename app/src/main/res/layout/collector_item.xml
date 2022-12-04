@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:maxHeight="54dp"
             android:text="@{collector.name}" />
         <TextView
@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:maxHeight="54dp"
             android:text="@{collector.email}" />
     </LinearLayout>
