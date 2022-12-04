@@ -210,19 +210,8 @@
                             android:layout_weight="0"
                             android:text="@string/newAlbumSave" />
 
-                        <Space
-                            android:layout_width="40sp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0" />
 
-                        <Button
-                            android:id="@+id/btnNewAlbumNewTrack"
-                            android:layout_width="150sp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:gravity="end"
-                            android:layout_weight="0"
-                            android:text="@string/newAlbumNewTrack" />
+
                     </LinearLayout>
                 </LinearLayout>
         </ScrollView>
