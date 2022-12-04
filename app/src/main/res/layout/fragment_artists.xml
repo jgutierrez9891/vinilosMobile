@@ -70,6 +70,7 @@
                 android:ems="10"
                 android:inputType="text"
                 android:hint="@string/buscarString"
+                android:textColorHint="#5B5C58"
                 android:importantForAutofill="no" />
         </LinearLayout>
 

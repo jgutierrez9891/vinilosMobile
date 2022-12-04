@@ -84,16 +84,19 @@
                         android:contentDescription="@string/contDesc_collectorButton"/>
                 </TableRow>
 
-                <TableRow android:gravity="center">
+                <TableRow
+                    android:layout_height="47dp"
+                    android:gravity="center">
 
                     <TextView
                         android:id="@+id/visitor2"
                         android:layout_width="170dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="73dp"
                         android:gravity="center"
+                        android:maxHeight="48dp"
                         android:text="@string/visitor"
                         android:textColor="#000000"
-                        android:textSize="15sp" />
+                        android:textSize="22sp" />
 
                     <TextView
                         android:id="@+id/collector2"
@@ -102,7 +105,8 @@
                         android:gravity="center"
                         android:text="@string/collector"
                         android:textColor="#000000"
-                        android:textSize="15sp" />
+                        android:textSize="22sp"
+                        android:maxHeight="48dp"/>
                 </TableRow>
 
             </TableLayout>

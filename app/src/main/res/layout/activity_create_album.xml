@@ -56,12 +56,13 @@
                             android:text="@string/album_lbl_coverURL"
                             android:textColor="@android:color/black"
                             android:textSize="15sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:labelFor="@id/editTextCoverURL"/>
 
                         <EditText
                             android:id="@+id/editTextCoverURL"
                             android:layout_width="300sp"
-                            android:layout_height="40sp"
+                            android:layout_height="48sp"
                             android:layout_gravity="center_horizontal"
                             android:layout_weight="1"
                             android:background="#EDEDED"

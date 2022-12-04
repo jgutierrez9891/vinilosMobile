@@ -54,6 +54,7 @@
                     android:ems="10"
                     android:hint="Buscar"
                     android:inputType="text"
+                    android:textColorHint="#5B5C58"
                     android:importantForAutofill="no" />
             </TableRow>
         </TableLayout>
