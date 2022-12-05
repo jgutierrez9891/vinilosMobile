@@ -16,12 +16,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
+            android:textSize="20sp"
+            android:maxHeight="54dp"
             android:text="@{collector.name}" />
         <TextView
             android:id="@+id/emailView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
+            android:textSize="16sp"
+            android:maxHeight="54dp"
             android:text="@{collector.email}" />
     </LinearLayout>
 </layout>

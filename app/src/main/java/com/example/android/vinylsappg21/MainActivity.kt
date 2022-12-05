@@ -3,6 +3,7 @@ package com.example.android.vinylsappg21
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
 
@@ -47,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-
+        // hiding the back button in action bar
+        supportActionBar?.setDisplayHomeAsUpEnabled(false)
     }
 }

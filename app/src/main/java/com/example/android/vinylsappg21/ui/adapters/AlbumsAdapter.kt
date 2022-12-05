@@ -1,6 +1,7 @@
 package com.example.android.vinylsappg21.ui.adapters
 
 import android.content.Intent
+import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
@@ -11,6 +12,7 @@ import com.example.android.vinylsappg21.R
 import com.example.android.vinylsappg21.databinding.AlbumItemBinding
 import com.example.android.vinylsappg21.models.Album
 import com.example.android.vinylsappg21.ui.albums.AlbumDetailActivity
+import kotlinx.android.synthetic.main.album_item.view.*
 
 class AlbumsAdapter: RecyclerView.Adapter<AlbumsAdapter.AlbumViewHolder>(){
 
@@ -39,6 +41,7 @@ class AlbumsAdapter: RecyclerView.Adapter<AlbumsAdapter.AlbumViewHolder>(){
             val activity = v!!.context as AppCompatActivity;
             activity?.let{
                 val intent = Intent (it, AlbumDetailActivity::class.java)
+                intent.putExtra("album_id", albums[position].albumId.toString())
                 intent.putExtra("album_name", albums[position].name)
                 intent.putExtra("release_date", albums[position].releaseDate)
                 intent.putExtra("genre", albums[position].genre)
@@ -48,7 +51,7 @@ class AlbumsAdapter: RecyclerView.Adapter<AlbumsAdapter.AlbumViewHolder>(){
                 it.startActivity(intent)
             }
         }
-        //notifyItemChanged(position)
+        holder.itemView.myImageView.contentDescription = "Imagen de portada del album "+albums[position].name
     }
 
     override fun getItemCount(): Int {

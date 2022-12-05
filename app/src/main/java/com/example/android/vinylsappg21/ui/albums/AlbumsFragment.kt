@@ -1,5 +1,6 @@
 package com.example.android.vinylsappg21.ui.albums
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -18,6 +20,7 @@ import com.example.android.vinylsappg21.R
 import com.example.android.vinylsappg21.databinding.FragmentAlbumsBinding
 import com.example.android.vinylsappg21.models.Album
 import com.example.android.vinylsappg21.ui.adapters.AlbumsAdapter
+import com.example.android.vinylsappg21.ui.tracks.CreateTrackActivity
 import com.example.android.vinylsappg21.viewmodels.AlbumViewModel
 
 class AlbumsFragment : Fragment() {
@@ -51,6 +54,14 @@ class AlbumsFragment : Fragment() {
             button.setVisibility(View.GONE);
         } else {
             button.setVisibility(View.VISIBLE);
+        }
+
+        button.setOnClickListener { v ->
+            val activity = v!!.context as AppCompatActivity;
+            activity?.let{
+                val intent = Intent (it, CreateAlbumActivity::class.java)
+                it.startActivity(intent)
+            }
         }
         return view
     }

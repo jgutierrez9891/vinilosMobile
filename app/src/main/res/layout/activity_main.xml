@@ -15,7 +15,8 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_vinilos" />
+                android:src="@drawable/ic_vinilos"
+                android:contentDescription="@string/contDesc_appLogo"/>
         </TableRow>
         <TableRow android:gravity="center">
             <TextView
@@ -33,7 +34,8 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/white_space" />
+                android:src="@drawable/white_space"
+                android:contentDescription="@null"/>
         </TableRow>
         <TableRow android:gravity="center">
             <TextView
@@ -52,7 +54,8 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="45dp"
-                android:src="@drawable/white_space" />
+                android:src="@drawable/white_space"
+                android:contentDescription="@null"/>
         </TableRow>
 
         <TableRow
@@ -70,25 +73,30 @@
                         android:id="@+id/visitor1"
                         android:layout_width="211dp"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_visitantes" />
+                        android:src="@drawable/ic_visitantes"
+                        android:contentDescription="@string/contDesc_visitorButton"/>
 
                     <ImageView
                         android:id="@+id/collector1"
                         android:layout_width="177dp"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_coleccionistas" />
+                        android:src="@drawable/ic_coleccionistas"
+                        android:contentDescription="@string/contDesc_collectorButton"/>
                 </TableRow>
 
-                <TableRow android:gravity="center">
+                <TableRow
+                    android:layout_height="47dp"
+                    android:gravity="center">
 
                     <TextView
                         android:id="@+id/visitor2"
                         android:layout_width="170dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="73dp"
                         android:gravity="center"
+                        android:maxHeight="48dp"
                         android:text="@string/visitor"
                         android:textColor="#000000"
-                        android:textSize="15sp" />
+                        android:textSize="22sp" />
 
                     <TextView
                         android:id="@+id/collector2"
@@ -97,7 +105,8 @@
                         android:gravity="center"
                         android:text="@string/collector"
                         android:textColor="#000000"
-                        android:textSize="15sp" />
+                        android:textSize="22sp"
+                        android:maxHeight="48dp"/>
                 </TableRow>
 
             </TableLayout>

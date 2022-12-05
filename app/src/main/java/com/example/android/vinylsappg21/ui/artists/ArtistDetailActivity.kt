@@ -1,7 +1,9 @@
 package com.example.android.vinylsappg21.ui.artists
 
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.ImageView
+import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.android.vinylsappg21.R
@@ -15,7 +17,7 @@ class ArtistDetailActivity : AppCompatActivity() {
     private lateinit var imageArtist: ImageView
     private lateinit var birthdayArtist: TextView
     private lateinit var descArtist: TextView
-    private lateinit var albumsArtist: TextView
+    private lateinit var albumList : ListView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,8 +45,20 @@ class ArtistDetailActivity : AppCompatActivity() {
         descArtist = findViewById(R.id.details_artist)
         descArtist.text = intent.getStringExtra("description")
 
-        albumsArtist = findViewById(R.id.albums_artist)
-        albumsArtist.text = intent.getStringArrayListExtra("albums").toString()
+        albumList = findViewById(R.id.albumsList)
+        val list = intent.getStringArrayListExtra("albums")
+        list?.let{
+            val arrayAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_activated_1, list!!)
+            albumList.adapter = arrayAdapter
+        }
 
+        // showing the back button in action bar
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setBackgroundDrawable(resources.getDrawable(R.drawable.side_nav_bar, null))
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

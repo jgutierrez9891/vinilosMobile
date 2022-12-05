@@ -1,10 +1,10 @@
 package com.example.android.vinylsappg21.network
 
+import VolleyBroker.Companion.getRequest
 import android.content.Context
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
-import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
@@ -56,17 +56,22 @@ class NetworkServiceAdapter constructor(context: Context) {
             { response ->
                 val resp = JSONArray(response)
                 val list = mutableListOf<Artist>()
-                var albumsList = arrayListOf<String>()
-                var item:JSONObject? = null
+                var listAlbums = arrayOf<String>()
                 for (i in 0 until resp.length()) {
                     val item = resp.getJSONObject(i)
                     if (item.getJSONArray("albums").length()>0){
                         val jsonArray = item.getJSONArray("albums")
-                        albumsList = jsonArray.toArrayList()
+                        (0 until jsonArray.length()).forEach {
+                            val albums = jsonArray.getJSONObject(it)
+                            listAlbums += albums.get("name").toString()
+                        }
+                    }else{
+                        listAlbums = arrayOf<String>()
                     }
-                    val artist= Artist(artistId = item.getInt("id"),name = item.getString("name"), image = item.getString("image"), description = item.getString("description"), birthday = item.getString("birthDate"), albums = albumsList)
+                    val artist= Artist(artistId = item.getInt("id"),name = item.getString("name"), image = item.getString("image"), description = item.getString("description"), birthday = item.getString("birthDate"), albums = listAlbums)
                     list.add(artist)
                 }
+                list.sortBy{it.name?.toString()}
                 cont.resume(list)
             },
             {
@@ -79,18 +84,28 @@ class NetworkServiceAdapter constructor(context: Context) {
             { response ->
                 val resp = JSONArray(response)
                 val list = mutableListOf<Collector>()
+                var listAlbums = arrayOf<String>()
                 for (i in 0 until resp.length()) { //inicializado como variable de retorno
                     val item = resp.getJSONObject(i)
-                    val collector = Collector(collectorId = item.getInt("id"),name = item.getString("name"), telephone = item.getString("telephone"), email = item.getString("email"))
+                    if (item.getJSONArray("collectorAlbums").length()>0){
+                        val jsonArray = item.getJSONArray("collectorAlbums")
+                        (0 until jsonArray.length()).forEach {
+                            val albums = jsonArray.getJSONObject(it)
+                            listAlbums += albums.get("id").toString()
+                        }
+                    }else{
+                        listAlbums = arrayOf<String>()
+                    }
+                    val collector = Collector(collectorId = item.getInt("id"),name = item.getString("name"), telephone = item.getString("telephone"), email = item.getString("email"), collectorAlbums = listAlbums)
                     list.add(collector) //se agrega a medida que se procesa la respuesta
                 }
+                list.sortBy{it.name?.toString()}
                 cont.resume(list)
             },
             {
                 cont.resumeWithException(it)
             }))
     }
-
 
     fun JSONArray.toArrayList(): ArrayList<String> {
         val list = arrayListOf<String>()
